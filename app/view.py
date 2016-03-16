@@ -11,3 +11,8 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/questions')
+def show_question():
+    questions = Question.query.filter_by(del_status=1)
+    return render_template('show_question.html', questions=questions)
+
