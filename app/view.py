@@ -9,10 +9,10 @@ from wtforms.validators import DataRequired
 
 
 class QuestionForm(Form):
-    question = StringField('问题', validators=[DataRequired()])
-    author = StringField('作者')
-    answer = TextAreaField('回答')
-    submit = SubmitField('保存')
+    question = StringField('question')
+    author = StringField('author')
+    answer = TextAreaField('answer')
+    submit = SubmitField('save')
 
 
 @app.route('/')
@@ -30,8 +30,11 @@ def show_question():
 def new_question():
     form = QuestionForm()
     if form.validate_on_submit():
+        print('OK2!')
         question = Question(question=form.question, author=form.author, answer=form.answer)
+        print('OK3!')
         db.session.add(question)
+        print('OK4!')
         db.session.commit()
         flash('保存成功')
         return redirect(url_for('show_question'))

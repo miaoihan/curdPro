@@ -7,9 +7,12 @@
 
 {% block content %}
 <div class="container">
-    { % for message in get_flashed_messages() % }
+{#    {% for message in get_flashed_messages %}#}
+{#        {{ message }}#}
+{#    {% endfor %}#}
+
     <form action="new_question" method="POST">
-        {{ form.hidden_tag() }}
+{#        {{ form.hidden_tag() }}#}
         {{ form.question.label }} {{ form.question(id='question') }}
         {{ form.author.label }} {{ form.author }}
         {{ form.answer.label }} {{ form.answer }}
