@@ -7,13 +7,13 @@
 
 {% block content %}
 <div class="container">
+    { % for message in get_flashed_messages() % }
     <form action="new_question" method="POST">
         {{ form.hidden_tag() }}
         {{ form.question.label }} {{ form.question(id='question') }}
-        {{ form.author.label }} {{ form.author(id='author') }}
-        {{ form.question.label }} {{ form.question(id='question') }}
+        {{ form.author.label }} {{ form.author }}
+        {{ form.answer.label }} {{ form.answer }}
         {{ form.submit() }}
-
     </form>
 
 </div>

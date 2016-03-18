@@ -7,9 +7,7 @@ from . import db
 class Question(db.Model):
     # 如果没有定义 __tablename__ ,Flask-
     # 数据库 | 47SQLAlchemy 会使用一个默认名字,但默认的表名没有遵守使用复数形式进行命名的约定
-
     __tablename__ = 'questions'
-
     # primary_key 如果设为 True ,这列就是表的主键
     # unique 如果设为 True ,这列不允许出现重复的值
     # index 如果设为 True ,为这列创建索引,提升查询效率
