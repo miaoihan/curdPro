@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+<style type="text/css">
+
+
+</style>
+{% block title %}new{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="new_question" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.question.label }} {{ form.question(id='question') }}
+        {{ form.author.label }} {{ form.author(id='author') }}
+        {{ form.question.label }} {{ form.question(id='question') }}
+        {{ form.submit() }}
+
+    </form>
+
+</div>
+
+{% endblock %}
+
