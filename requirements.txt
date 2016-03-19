@@ -8,5 +8,5 @@ Flask-OpenID==1.2.5
 Flask-Script==2.0.5
 Flask-SQLAlchemy==2.1
 Flask-WhooshAlchemy==0.56
-Flask-WTF==0.12
+Flask-WTF==0.9.3
 PyMySQL==0.7.2

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/ENV3.4" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
@@ -10,6 +12,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/app/templates" />
+        <option value="$MODULE_DIR$/ENV3.4/lib/python3.4/site-packages/flask_bootstrap/templates" />
       </list>
     </option>
   </component>

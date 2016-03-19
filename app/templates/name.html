@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="submit">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name(maxlength=18) }}
+    <input type="submit" value="Go">
+</form>
+</body>
+</html>

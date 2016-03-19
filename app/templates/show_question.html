@@ -9,8 +9,8 @@
 
 {% block content %}
 <div class="container">
-    <div class="qu-table">
-    <table class="table table-striped">
+    <div class="qu-table" style="height: 60px"></div>
+    <table class="table table-striped ">
         <tr>
             <th>问题</th>
             <th>作者</th>
@@ -26,8 +26,8 @@
             <td align="center"><a href="/del_question/{{ question.id }}">删除</a></td>
         </tr>
         {% endfor %}
-    </table></div>
-    <a href="/new_question" class="btn btn-primary">添加</a>
+    </table>
+    <a href="{{ url_for('new_question') }}" class="btn btn-primary">添加</a>
 </div>
 
 {% endblock %}
