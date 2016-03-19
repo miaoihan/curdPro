@@ -11,9 +11,9 @@
     {% for message in get_flashed_messages() %}
         {{ message }}
     {% endfor %}
-
+{#    <h1>{{ question_id }}</h1>#}
     <form action="{{ url_for('new_question') }}" method="POST">
-        <input type="hidden" name="question_id">
+        <input type="hidden" name="question_id" value="{{ question_id }}">
         {{ form.hidden_tag() }}
 {#        <div class="form-group">#}
 {#        {{ form.question.label }} {{ form.question(id='question',class='form-control') }}</div>#}
