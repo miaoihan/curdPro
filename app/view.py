@@ -3,19 +3,7 @@
 from app import app, db
 from flask import render_template, request, url_for, redirect, flash, session
 from app.model import Question
-from flask_wtf import Form
-from wtforms import StringField, SubmitField, TextAreaField, validators, TextField
-from wtforms.validators import DataRequired, Length, EqualTo
-
-
-class QuestionForm(Form):
-    # email = StringField('Email', validators=[Required(), Length(1, 64),
-    #                     Email()])
-    # password = PasswordField('Password', validators=[Required()])
-    question = StringField('问题', validators=[DataRequired(message='不能是空的哦'), Length(4, 30, message='长度在4-30之间')])
-    author = StringField('作者', validators=[DataRequired()])
-    answer = TextAreaField('回答', validators=[DataRequired()])
-    submit = SubmitField('保存')
+from .forms import QuestionForm
 
 
 @app.route('/')
@@ -50,6 +38,7 @@ def new_question():
         db.session.commit()
         # flash('保存成功')
         return redirect(url_for('show_question'))
+    # 校验不通过时把id值传过去，防止merge失效
     if request.method == 'POST':
         question_id = request.form['question_id']
         return render_template('new_question.html', form=form, question_id=question_id)
