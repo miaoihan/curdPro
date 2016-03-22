@@ -1,6 +1,6 @@
 from flask_wtf import Form
-from wtforms import StringField, SubmitField, TextAreaField, validators, TextField
-from wtforms.validators import DataRequired, Length, EqualTo
+from wtforms import StringField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, Length
 
 
 class QuestionForm(Form):

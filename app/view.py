@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # coding=utf-8
 from app import app, db
-from flask import render_template, request, url_for, redirect, flash, session
-from app.model import Question
+from flask import render_template, request, url_for, redirect
+from .model import Question
 from .forms import QuestionForm
 
 
@@ -29,7 +29,6 @@ def new_question():
         #     question = Question(question=form.question.data,
         #                         author=form.author.data,
         #                         answer=form.answer.data)
-
         question = Question(id=question_id,
                             question=form.question.data,
                             author=form.author.data,
